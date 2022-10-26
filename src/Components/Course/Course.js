@@ -26,7 +26,7 @@ const Course = ({ course }) => {
         <div>
           <Link
             to={`/category/${catID}`}
-            className="bg-blue-600 text-xs p-1 rounded text-white hover:bg-white hover:text-blue-600 border border-blue-600 transition-all duration-300 inline-block"
+            className="bg-blue-600 text-xs  p-1 rounded text-white hover:bg-white hover:text-blue-600 border border-blue-600 transition-all duration-300 inline-block"
           >
             {CategoryName}
           </Link>

@@ -1,12 +1,37 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { FaSignOutAlt } from "react-icons/fa";
+import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../../Context/UserContext/UserContext";
 import avatar from "./avator.png";
 
 export const Nav = ({ darkMode, setDarkMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, logOut } = useContext(AuthContext);
+  const location = useLocation();
+  const currentPageLocation = location.pathname;
 
+  const MenuItems = [
+    {
+      menuID: 1,
+      MenuName: "Home",
+      link: "/",
+    },
+    {
+      menuID: 1,
+      MenuName: "Courses",
+      link: "/courses",
+    },
+    {
+      menuID: 1,
+      MenuName: "Blog",
+      link: "/Blog",
+    },
+    {
+      menuID: 1,
+      MenuName: "FAQ",
+      link: "/faq",
+    },
+  ];
   return (
     <div className="bg-gray-900">
       <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:w-10/12 md:px-24 lg:px-8">
@@ -21,80 +46,24 @@ export const Nav = ({ darkMode, setDarkMode }) => {
           </Link>
 
           <ul className="items-center hidden space-x-8 lg:flex">
-            <li>
+            {MenuItems.map((item) => (
               <Link
-                to="/"
+                key={item.menuID}
+                to={item.link}
                 aria-label="Our product"
-                title="Our product"
-                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                title={item.MenuName}
+                className={`font-medium tracking-wide py-2 rounded px-3 text-gray-100 transition-colors duration-200 hover:text-teal-accent-400  ${
+                  currentPageLocation == item.link && "border border-white"
+                }`}
               >
-                Home
+                {item.MenuName}
               </Link>
-            </li>
-            <li>
-              <Link
-                to="/courses"
-                aria-label="Our product"
-                title="Our product"
-                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-              >
-                Courses
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/blog"
-                aria-label="Our product"
-                title="Our product"
-                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-              >
-                Blog
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/faq"
-                aria-label="Our product"
-                title="Our product"
-                className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-              >
-                FAQ
-              </Link>
-            </li>
+            ))}
+
+            <li></li>
           </ul>
+
           <ul className="hidden lg:flex items-center gap-8">
-            {user?.email ? (
-              <>
-                <li className="font-semibold">
-                  <Link to="/profile">
-                    <img
-                      className="rounded-full w-12"
-                      src={user?.photoURL ? user?.photoURL : avatar}
-                      alt="user"
-                    />
-                  </Link>
-                </li>
-                <button
-                  onClick={logOut}
-                  className="bg-white hover:bg-[#21225f] hover:text-white rounded text-sm px-5 py-2 mr-2"
-                >
-                  logOut
-                </button>
-              </>
-            ) : (
-              <li className="font-semibold">
-                <Link to="/login">
-                  <button className="bg-white hover:bg-[#21225f] hover:text-white rounded text-sm px-5 py-2 mr-2">
-                    Sign In
-                  </button>
-                </Link>
-                <Link to="/signup">
-                  <button className="bg-blue-600  hover:bg-[#21225f] text-white rounded text-sm px-5 py-2">
-                    Sign Up
-                  </button>
-                </Link>
-              </li>
-            )}
             <label
               htmlFor="Toggle2"
               className="inline-flex items-center space-x-4 cursor-pointer text-gray-100"
@@ -112,6 +81,39 @@ export const Nav = ({ darkMode, setDarkMode }) => {
               </span>
               <span>Dark</span>
             </label>
+            {user?.email ? (
+              <>
+                <li className="font-semibold">
+                  <Link to="/profile">
+                    <img
+                      className="rounded-full w-12"
+                      src={user?.photoURL ? user?.photoURL : avatar}
+                      alt="user"
+                    />
+                  </Link>
+                </li>
+                <span
+                  title="LogOut"
+                  onClick={logOut}
+                  className="bg-white cursor-pointer hover:bg-[#21225f] hover:text-white rounded text-sm px-5 py-2 mr-2"
+                >
+                  <FaSignOutAlt />
+                </span>
+              </>
+            ) : (
+              <li className="font-semibold">
+                <Link to="/login">
+                  <button className="bg-white hover:bg-[#21225f] hover:text-white rounded text-sm px-5 py-2 mr-2">
+                    Sign In
+                  </button>
+                </Link>
+                <Link to="/signup">
+                  <button className="bg-blue-600  hover:bg-[#21225f] text-white rounded text-sm px-5 py-2">
+                    Sign Up
+                  </button>
+                </Link>
+              </li>
+            )}
           </ul>
 
           <div className="lg:hidden">

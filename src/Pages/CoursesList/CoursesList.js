@@ -36,7 +36,7 @@ const CoursesList = () => {
             <div
               key={category}
               onClick={() => setCourseCat(category.catID)}
-              className={`cursor-pointer hover:bg-blue-100 rounded-md py-3 px-4 font-semibold ${
+              className={`cursor-pointer hover:bg-blue-50 rounded-md py-2 my-2 px-4 font-semibold ${
                 category.catID == courseCat ? "bg-blue-100" : "bg-white"
               }`}
             >
