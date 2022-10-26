@@ -91,9 +91,9 @@ const SignUp = () => {
               </button>
             </form>
 
-            <p className="text-xs text-center sm:px-6 dark:text-gray-400">
-              Already have an account?
-              <Link to="/login" className="underline dark:text-gray-100">
+            <p className="text-lg text-center sm:px-6 dark:text-gray-400">
+              Already have an account?{" "}
+              <Link to="/login" className=" font-bold dark:text-gray-100">
                 Sign In
               </Link>
             </p>

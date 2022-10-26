@@ -161,7 +161,7 @@ const CoursePreview = () => {
               </div>
               <div className="pb-4 px-5">
                 <button className="bg-blue-600  rounded-md text-white font-bold py-2 w-full">
-                  Enroll Now
+                  Get premium access
                 </button>
               </div>
             </div>
