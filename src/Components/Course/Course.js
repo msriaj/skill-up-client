@@ -32,7 +32,10 @@ const Course = ({ course }) => {
             {CategoryName}
           </Link>
         </div>
-        <Link className=" tracking-wider uppercase   dark:text-violet-400">
+        <Link
+          to={`/course-preview/${courseID}`}
+          className="tracking-wider uppercase   dark:text-violet-400"
+        >
           <h3 className=" py-2 text-sm font-bold dark:text-[#E2E8F0] dark:hover:text-[#e2e8f08a]   ">
             {CourseName}
           </h3>

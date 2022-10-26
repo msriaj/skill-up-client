@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import banner from "./banner.png";
 const Header = () => {
   return (
@@ -17,12 +18,16 @@ const Header = () => {
                 accusantium doloremque laudan, totam rem aperiam, eaque ipsa
                 quae.
               </p>
-              <button className="px-5 py-3 rounded-md bg-blue-600  hover:bg-[#21225f] text-white mr-5 transition-colors duration-300">
-                Get Started
-              </button>
-              <button className="px-5 py-3 rounded-md border border-blue-600   hover:bg-[#21225f] hover:text-white mr-5 transition-colors duration-300 dark:bg-[#0F172A] dark:text-white">
-                See Course
-              </button>
+              <Link to="/signup">
+                <button className="px-5 py-3 rounded-md bg-blue-600  hover:bg-[#21225f] text-white mr-5 transition-colors duration-300">
+                  Get Started
+                </button>{" "}
+              </Link>
+              <Link to="/courses">
+                <button className="px-5 py-3 rounded-md border border-blue-600   hover:bg-[#21225f] hover:text-white mr-5 transition-colors duration-300 dark:bg-[#0F172A] dark:text-white">
+                  See Course
+                </button>
+              </Link>
             </div>
             <div className="w-full max-w-xl xl:px-8 xl:w-5/12">
               <img className="w-full" src={banner} alt="" />

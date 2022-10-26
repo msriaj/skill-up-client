@@ -89,11 +89,16 @@ export const Nav = ({ darkMode, setDarkMode }) => {
                       className="rounded-full w-12"
                       src={user?.photoURL ? user?.photoURL : avatar}
                       alt="user"
+                      title={
+                        user?.displayName
+                          ? user?.displayName
+                          : "No displayName Found please login again"
+                      }
                     />
                   </Link>
                 </li>
                 <span
-                  title="LogOut"
+                  title="Log Out"
                   onClick={logOut}
                   className="bg-white cursor-pointer hover:bg-[#21225f] hover:text-white rounded text-sm px-5 py-2 mr-2"
                 >

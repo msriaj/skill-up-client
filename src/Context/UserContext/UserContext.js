@@ -45,6 +45,7 @@ const UserContext = ({ children }) => {
   };
 
   const signInGithub = () => {
+    setLoading(true);
     return signInWithPopup(auth, gitHubProvider);
   };
 
@@ -59,7 +60,6 @@ const UserContext = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      console.log(currentUser);
       setLoading(false);
     });
 

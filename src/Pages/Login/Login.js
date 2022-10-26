@@ -3,8 +3,22 @@ import { useState } from "react";
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/UserContext/UserContext";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
+  const resetNotify = () =>
+    toast.success("Reset Link Sent To Your Email!!", {
+      position: "top-right",
+      autoClose: 8000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+
   const { signInEmail, googleSignIn, resetPass, signInGithub } =
     useContext(AuthContext);
   const [typedEmail, setTypedEmail] = useState("");
@@ -40,7 +54,7 @@ const Login = () => {
   const resetHandler = () => {
     typedEmail !== "" &&
       resetPass(typedEmail)
-        .then((result) => console.log("Reset Link Sent In your Email"))
+        .then((result) => resetNotify())
         .catch((err) => console.log(err));
   };
 
@@ -147,6 +161,20 @@ const Login = () => {
           </p>
         </div>
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+      {/* Same as */}
+      <ToastContainer />
     </div>
   );
 };
