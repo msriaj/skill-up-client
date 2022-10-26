@@ -3,7 +3,7 @@ import React from "react";
 const Header = () => {
   return (
     <div className="relative">
-      <div className="relative bg-gray-200 bg-opacity-75">
+      <div className="relative bg-blue-50 bg-opacity-75">
         <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:w-10/12 md:px-24 lg:px-8 lg:py-40">
           <div className="flex flex-col items-center justify-between xl:flex-row">
             <div className="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">

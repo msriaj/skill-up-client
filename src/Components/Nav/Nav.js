@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-
-export const Nav = () => {
+import { AuthContext } from "../../Context/UserContext/UserContext";
+import avatar from "./avator.png";
+export const Nav = ({ darkMode, setDarkMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user, logOut } = useContext(AuthContext);
 
   return (
     <div class="bg-gray-900">
@@ -17,7 +19,7 @@ export const Nav = () => {
             </span>
           </Link>
 
-          <ul class="flex items-center hidden space-x-8 lg:flex">
+          <ul class="items-center hidden space-x-8 lg:flex">
             <li>
               <Link
                 to="/"
@@ -58,19 +60,60 @@ export const Nav = () => {
                 FAQ
               </Link>
             </li>
-            <li className="font-semibold">
-              <Link to="/login">
-                <button className="bg-white hover:bg-[#21225f] hover:text-white rounded text-sm px-5 py-2 mr-2">
-                  Sign In
-                </button>
-              </Link>
-              <Link to="/signup">
-                <button className="bg-blue-600  hover:bg-[#21225f] text-white rounded text-sm px-5 py-2">
-                  Sign Up
-                </button>
-              </Link>
-            </li>
           </ul>
+          <ul className="hidden lg:flex items-center gap-8">
+            {user?.email ? (
+              <>
+                {" "}
+                <li className="font-semibold">
+                  <Link to="/profile">
+                    <img
+                      className="rounded-full w-12"
+                      src={user?.photoURL ? user?.photoURL : avatar}
+                      alt="user"
+                    />
+                  </Link>
+                </li>
+                <button
+                  onClick={logOut}
+                  className="bg-white hover:bg-[#21225f] hover:text-white rounded text-sm px-5 py-2 mr-2"
+                >
+                  logOut
+                </button>
+              </>
+            ) : (
+              <li className="font-semibold">
+                <Link to="/login">
+                  <button className="bg-white hover:bg-[#21225f] hover:text-white rounded text-sm px-5 py-2 mr-2">
+                    Sign In
+                  </button>
+                </Link>
+                <Link to="/signup">
+                  <button className="bg-blue-600  hover:bg-[#21225f] text-white rounded text-sm px-5 py-2">
+                    Sign Up
+                  </button>
+                </Link>
+              </li>
+            )}
+            <label
+              for="Toggle2"
+              className="inline-flex items-center space-x-4 cursor-pointer text-gray-100"
+            >
+              <span>Light</span>
+              <span className="relative">
+                <input
+                  id="Toggle2"
+                  onChange={() => setDarkMode(!darkMode)}
+                  type="checkbox"
+                  className="hidden peer"
+                />
+                <div className="w-10 h-4 rounded-full shadow  bg-white peer-checked:dark:bg-violet-400"></div>
+                <div className="absolute left-0 w-6 h-6 rounded-full shadow -inset-y-1 peer-checked:right-0 peer-checked:left-auto  bg-violet-400"></div>
+              </span>
+              <span>Dark</span>
+            </label>
+          </ul>
+
           <div class="lg:hidden">
             <button
               aria-label="Open Menu"

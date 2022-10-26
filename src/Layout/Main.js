@@ -1,15 +1,17 @@
 import React from "react";
+import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import Footer from "../Components/Footer/Footer";
 import { Nav } from "../Components/Nav/Nav";
 
 const Main = () => {
+  const [darkMode, setDarkMode] = useState(false);
   return (
-    <>
-      <Nav />
+    <div className={darkMode && "dark"}>
+      <Nav darkMode={darkMode} setDarkMode={setDarkMode} />
       <Outlet />
       <Footer />
-    </>
+    </div>
   );
 };
 
