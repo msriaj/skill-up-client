@@ -31,13 +31,17 @@ const Course = ({ course }) => {
             {CategoryName}
           </Link>
         </div>
-        <Link className=" tracking-wider uppercase hover:underline dark:text-violet-400">
-          <h3 className="flex-1 py-2  font-semibold  ">{CourseName}</h3>
+        <Link className=" tracking-wider uppercase   dark:text-violet-400">
+          <h3 className=" py-2 text-sm font-bold text-gray-600 hover:text-gray-900   ">
+            {CourseName}
+          </h3>
         </Link>
         <div className="flex flex-wrap justify-between  space-x-2 text-xs dark:text-gray-400">
-          <span>Instructor: {Author} </span>
+          <span>
+            Instructor: <b>{Author}</b>{" "}
+          </span>
         </div>
-        <div className="flex flex-wrap justify-between  space-x-2 text-xs dark:text-gray-400">
+        <div className="flex font-bold my-4 flex-wrap justify-between  space-x-2 text-xs dark:text-gray-400">
           <span>{studentEnrolled} Enrolled</span>
           <span>Review: {Review}</span>
         </div>

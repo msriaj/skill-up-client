@@ -17,17 +17,17 @@ export const Nav = ({ darkMode, setDarkMode }) => {
       link: "/",
     },
     {
-      menuID: 1,
+      menuID: 2,
       MenuName: "Courses",
       link: "/courses",
     },
     {
-      menuID: 1,
+      menuID: 3,
       MenuName: "Blog",
       link: "/Blog",
     },
     {
-      menuID: 1,
+      menuID: 4,
       MenuName: "FAQ",
       link: "/faq",
     },
@@ -53,7 +53,7 @@ export const Nav = ({ darkMode, setDarkMode }) => {
                 aria-label="Our product"
                 title={item.MenuName}
                 className={`font-medium tracking-wide py-2 rounded px-3 text-gray-100 transition-colors duration-200 hover:text-teal-accent-400  ${
-                  currentPageLocation == item.link && "border border-white"
+                  currentPageLocation === item.link && "border border-white"
                 }`}
               >
                 {item.MenuName}
