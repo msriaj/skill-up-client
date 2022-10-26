@@ -1,3 +1,5 @@
+import { FaClock, FaHeart, FaVideo } from "react-icons/fa";
+
 export const Feature = () => {
   return (
     <div className="dark:bg-[#0F172A]">
@@ -6,106 +8,55 @@ export const Feature = () => {
           <div className="relative p-px overflow-hidden transition duration-300 transform   border dark:border-[#101C2C] rounded shadow-lg hover:scale-105 group hover:shadow-xl">
             <div className="relative p-5 bg-white dark:bg-[#182233] rounded-sm">
               <div className="flex flex-col mb-2 lg:items-center lg:flex-row">
-                <div className="flex items-center justify-center w-10 h-10 mb-4 mr-2 rounded-full bg-indigo-50 lg:mb-0">
-                  <svg
-                    className="w-8 h-8 text-deep-purple-accent-400"
-                    stroke="currentColor"
-                    viewBox="0 0 52 52"
-                  >
-                    <polygon
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      fill="none"
-                      points="29 13 14 29 25 29 23 39 38 23 27 23"
-                    />
-                  </svg>
+                <div className="flex items-center justify-center w-10 h-10 mb-4 mr-2 rounded-full  bg-indigo-50 dark:bg-[#0D1A2B] lg:mb-0">
+                  <FaClock />
                 </div>
                 <h6 className="font-semibold leading-5 dark:text-[#E0E6EE]">
-                  The quick, brown fox
+                  Lifetime support
                 </h6>
               </div>
               <p className="mb-2 text-sm text-gray-900 dark:text-[#78869A]">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque rem aperiam.
+                Even though the training is over, the relationship with you does
+                not end here. As a Skill Up student you get life-time support.
+                24/7 online support anytime. Our subject wise experienced team
+                ensures this support offline or online.
               </p>
-              <a
-                href="/"
-                aria-label=""
-                className="inline-flex items-center text-sm font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
-              >
-                Learn more
-              </a>
             </div>
           </div>
           <div className="relative p-px overflow-hidden transition duration-300 transform   border dark:border-[#101C2C] rounded shadow-lg hover:scale-105 group hover:shadow-xl">
             <div className="relative p-5 bg-white dark:bg-[#182233] rounded-sm">
               <div className="flex flex-col mb-2 lg:items-center lg:flex-row">
-                <div className="flex items-center justify-center w-10 h-10 mb-4 mr-2 rounded-full bg-indigo-50 lg:mb-0">
-                  <svg
-                    className="w-8 h-8 text-deep-purple-accent-400"
-                    stroke="currentColor"
-                    viewBox="0 0 52 52"
-                  >
-                    <polygon
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      fill="none"
-                      points="29 13 14 29 25 29 23 39 38 23 27 23"
-                    />
-                  </svg>
+                <div className="flex items-center justify-center w-10 h-10 mb-4 mr-2 rounded-full  bg-indigo-50 dark:bg-[#0D1A2B] lg:mb-0">
+                  <FaHeart />
                 </div>
                 <h6 className="font-semibold leading-5 dark:text-[#E0E6EE]">
-                  Smooth as an android
+                  Career placement support
                 </h6>
               </div>
               <p className="mb-2 text-sm text-gray-900 dark:text-[#78869A]">
-                rounded shadow-lg Sed ut perspiciatis unde omnis iste natus
-                error sit voluptatem accusantium doloremque rem aperiam.
+                The Career Placement Department works to get the CV to the right
+                place according to the students' qualifications. From here you
+                will get various seminars on post-course grooming and career
+                guidelines.
               </p>
-              <a
-                href="/"
-                aria-label=""
-                className="inline-flex items-center text-sm font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
-              >
-                Learn more
-              </a>
             </div>
           </div>
           <div className="relative p-px overflow-hidden transition duration-300 transform   border  dark:border-[#101C2C] rounded shadow-lg hover:scale-105 group hover:shadow-xl">
             <div className="relative p-5 bg-white dark:bg-[#182233] rounded-sm">
               <div className="flex flex-col mb-2 lg:items-center lg:flex-row">
-                <div className="flex items-center justify-center w-10 h-10 mb-4 mr-2 rounded-full bg-indigo-50 lg:mb-0">
-                  <svg
-                    className="w-8 h-8 text-deep-purple-accent-400"
-                    stroke="currentColor"
-                    viewBox="0 0 52 52"
-                  >
-                    <polygon
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      fill="none"
-                      points="29 13 14 29 25 29 23 39 38 23 27 23"
-                    />
-                  </svg>
+                <div className="flex items-center justify-center w-10 h-10 mb-4 mr-2 rounded-full  bg-indigo-50 dark:bg-[#0D1A2B] lg:mb-0">
+                  <FaVideo />
                 </div>
                 <h6 className="font-semibold leading-5 dark:text-[#E0E6EE]">
-                  This is about justice
+                  Class video
                 </h6>
               </div>
               <p className="mb-2 text-sm text-gray-900 dark:text-[#78869A]">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque rem aperiam.
+                Many times students do not understand some topics in the class,
+                for them there is the benefit of class videos. So now the
+                students can take the class safely. You can solve any problem
+                yourself by watching the video in any difficulty.
               </p>
-              <a
-                href="/"
-                aria-label=""
-                className="inline-flex items-center text-sm font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
-              >
-                Learn more
-              </a>
             </div>
           </div>
         </div>

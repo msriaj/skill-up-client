@@ -1,13 +1,16 @@
 import React from "react";
 import { useState } from "react";
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/UserContext/UserContext";
 
 const Login = () => {
   const { signInEmail, googleSignIn, resetPass, signInGithub } =
     useContext(AuthContext);
   const [typedEmail, setTypedEmail] = useState("");
+
+  const location = useLocation();
+  const nextUrl = location?.state?.from.pathname || "/";
 
   const navigate = useNavigate();
 
@@ -18,19 +21,19 @@ const Login = () => {
     const password = form.password.value;
 
     signInEmail(email, password)
-      .then((user) => navigate("/"))
+      .then((user) => navigate(nextUrl))
       .catch((err) => console.log(err));
   };
 
   const googleSignInBtn = () => {
     googleSignIn()
-      .then((user) => navigate("/"))
+      .then((user) => navigate(nextUrl))
       .catch((err) => console.log(err));
   };
 
   const signInGithubHandler = () => {
     signInGithub()
-      .then((user) => navigate("/"))
+      .then((user) => navigate(nextUrl))
       .catch((err) => console.log(err));
   };
 

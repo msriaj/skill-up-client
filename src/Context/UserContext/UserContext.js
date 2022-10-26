@@ -11,11 +11,13 @@ import {
   signInWithPopup,
   sendPasswordResetEmail,
   GithubAuthProvider,
+  updateProfile,
 } from "firebase/auth";
 
 export const AuthContext = createContext();
 
 const auth = getAuth(app);
+
 const googleProvider = new GoogleAuthProvider();
 const gitHubProvider = new GithubAuthProvider();
 
@@ -32,13 +34,20 @@ const UserContext = ({ children }) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
+
+  const updateProfileInfo = (info) => {
+    updateProfile(auth.currentUser, info);
+  };
+
   const googleSignIn = () => {
     setLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
+
   const signInGithub = () => {
     return signInWithPopup(auth, gitHubProvider);
   };
+
   const logOut = () => {
     return signOut(auth);
   };
@@ -46,6 +55,7 @@ const UserContext = ({ children }) => {
   const resetPass = (email) => {
     return sendPasswordResetEmail(auth, email);
   };
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -67,6 +77,7 @@ const UserContext = ({ children }) => {
     user,
     loading,
     resetPass,
+    updateProfileInfo,
   };
 
   return (

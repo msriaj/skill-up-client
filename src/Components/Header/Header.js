@@ -1,5 +1,5 @@
 import React from "react";
-
+import banner from "./banner.png";
 const Header = () => {
   return (
     <div className="relative">
@@ -25,10 +25,7 @@ const Header = () => {
               </button>
             </div>
             <div className="w-full max-w-xl xl:px-8 xl:w-5/12">
-              <img
-                src="https://templates.hibootstrap.com/ledu/default/assets/images/home-two/home-two.png"
-                alt=""
-              />
+              <img className="w-full" src={banner} alt="" />
             </div>
           </div>
         </div>

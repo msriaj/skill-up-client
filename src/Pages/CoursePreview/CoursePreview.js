@@ -13,9 +13,8 @@ const CoursePreview = () => {
   const courseDetails = useLoaderData();
   console.log(courseDetails);
   const {
-    catID,
     CategoryName,
-    courseID,
+
     CourseThumb,
     CourseName,
     Author,
@@ -30,11 +29,11 @@ const CoursePreview = () => {
     Features,
   } = courseDetails;
   return (
-    <div className="bg-blue-50 py-5">
+    <div className="bg-blue-50 dark:bg-[#0F172A] py-5">
       <div className="lg:w-10/12 mx-auto ">
         <div className="bg-blue-600 text-white rounded-md flex items-center">
           <div className=" p-12">
-            <h1 className="text-xl font-semibold text-gray-300">
+            <h1 className="text-xl font-semibold text-gray-300 dark:text-white">
               {CategoryName}
             </h1>
             <h1 className="text-4xl font-semibold">{CourseName}</h1>
@@ -63,18 +62,20 @@ const CoursePreview = () => {
           </div>
         </div>
         <div className="flex my-5">
-          <div className="lg:w-8/12 border p-5 rounded-md shadow-md border-gray-200 bg-white">
-            <h1 className="font-semibold text-xl text-gray-700">Description</h1>
-            <p className="text-gray-600">{descriptions}</p>
+          <div className="lg:w-8/12 border p-5 rounded-md shadow-md border-gray-200 bg-white dark:bg-[#182133]">
+            <h1 className="font-semibold text-xl text-gray-700 dark:text-[#E2E8F0]">
+              Description
+            </h1>
+            <p className="text-gray-600 dark:text-white">{descriptions}</p>
 
-            <h1 className="font-semibold text-xl text-gray-700 mt-5">
+            <h1 className="font-semibold text-xl text-gray-700 dark:text-white mt-5">
               What You’ll Learn
             </h1>
             <p className="flex flex-wrap">
               {whatWillLearn.map((wwil, idx) => (
                 <li
                   key={idx}
-                  className="w-1/2 list-none flex items-center my-1 text-green-600"
+                  className="w-1/2 list-none flex items-center my-1 text-green-600  dark:text-[#36B4EC]"
                 >
                   <FaCheckCircle />
                   <span className="ml-2 font-semibold"> {wwil}</span>
@@ -82,7 +83,7 @@ const CoursePreview = () => {
               ))}
             </p>
 
-            <h1 className="font-semibold text-xl text-gray-700 mt-5">
+            <h1 className="font-semibold text-xl text-gray-700 dark:text-[#E2E8F0] mt-5">
               Requirements
             </h1>
             <p>
@@ -97,7 +98,7 @@ const CoursePreview = () => {
               ))}
             </p>
             <div>
-              <section className="dark:bg-gray-800 dark:text-gray-100">
+              <section className=" dark:text-gray-100">
                 <div className="container flex flex-col justify-center  py-8 mx-auto ">
                   <h2 className="text-2xl font-semibold sm:text-2xl mb-3">
                     Course Curriculum
@@ -106,7 +107,7 @@ const CoursePreview = () => {
                   <div className="space-y-4">
                     {CourseCurriculum.map((classModule, idx) => (
                       <details key={idx} className="w-full border rounded-lg">
-                        <summary className="px-4 cursor-pointer font-bold  text-gray-600 py-6 focus:outline-none focus-visible:ring-violet-400">
+                        <summary className="px-4 cursor-pointer font-bold  text-gray-600 dark:text-white py-6 focus:outline-none focus-visible:ring-violet-400">
                           {classModule.title}
                         </summary>
                         {classModule.topics.map((topic, idy) => (
@@ -127,27 +128,31 @@ const CoursePreview = () => {
             </div>
           </div>
           <div className="lg:w-4/12 ml-3">
-            <div className="rounded-xl shadow-md overflow-hidden bg-white">
+            <div className="rounded-xl shadow-md overflow-hidden bg-white dark:bg-[#182133]">
               <img src={CourseThumb} alt="" />
               <div className="p-4">
                 <div className="flex justify-around border-b border-blue-100 pb-3">
                   <div className="text-center">
-                    <div className="text-4xl font-bold">
+                    <div className="text-4xl font-bold dark:text-white">
                       {Hours} <br />
                     </div>
-                    <div className="text-gray-600 font-semibold">Hours </div>
+                    <div className="text-gray-600 dark:text-white font-semibold">
+                      Hours{" "}
+                    </div>
                   </div>
                   <div className="text-center">
-                    <div className="text-4xl font-bold">
+                    <div className="text-4xl font-bold dark:text-white">
                       {studentEnrolled} <br />
                     </div>
-                    <div className="text-gray-600 font-semibold">Students </div>
+                    <div className="text-gray-600 dark:text-white font-semibold">
+                      Students{" "}
+                    </div>
                   </div>
                 </div>
                 {Features.map((feture, ids) => (
                   <div
                     key="ids"
-                    className="border-b py-3 flex items-center text-gray-600 font-semibold border-blue-100"
+                    className="border-b py-3 flex items-center text-gray-600 dark:text-white font-semibold border-blue-100"
                   >
                     <FaFeather />
                     <span className="ml-2"> {feture}</span>

@@ -1,18 +1,25 @@
 import React, { useContext } from "react";
+
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/UserContext/UserContext";
 import img from "./signup.png";
 
 const SignUp = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateProfileInfo } = useContext(AuthContext);
   const navigate = useNavigate();
   const submitHandler = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
+    const displayName = form.name.value;
+    const photoURL = form.photo.value;
+    const info = { displayName: displayName, photoURL: photoURL };
     createUser(email, password)
-      .then((user) => navigate("/login"))
+      .then((user) => {
+        updateProfileInfo(info);
+        navigate("/profile");
+      })
       .catch((err) => console.log(err));
   };
   return (

@@ -6,7 +6,7 @@ import { serverUrl } from "../Utilitis/ApiConfig";
 const HomeCat = () => {
   const [category, setCategory] = useState([]);
   const [courses, setCourses] = useState([]);
-  const [courseCat, setCourseCat] = useState(6);
+  const [courseCat, setCourseCat] = useState(7);
   useEffect(() => {
     fetch(`${serverUrl}/categories`)
       .then((res) => res.json())

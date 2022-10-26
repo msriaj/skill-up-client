@@ -33,7 +33,7 @@ const Course = ({ course }) => {
           </Link>
         </div>
         <Link className=" tracking-wider uppercase   dark:text-violet-400">
-          <h3 className=" py-2 text-sm font-bold text-[#E2E8F0] hover:text-[#e2e8f08a]   ">
+          <h3 className=" py-2 text-sm font-bold dark:text-[#E2E8F0] dark:hover:text-[#e2e8f08a]   ">
             {CourseName}
           </h3>
         </Link>

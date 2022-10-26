@@ -9,6 +9,7 @@ import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Profile from "../Pages/Profile/Profile";
 import SignUp from "../Pages/SignUp/SignUp";
+import { PrivetRoutes } from "./PrivetRoutes";
 
 export const routes = createBrowserRouter([
   {
@@ -48,7 +49,11 @@ export const routes = createBrowserRouter([
       },
       {
         path: "/profile",
-        element: <Profile />,
+        element: (
+          <PrivetRoutes>
+            <Profile />
+          </PrivetRoutes>
+        ),
       },
     ],
   },
