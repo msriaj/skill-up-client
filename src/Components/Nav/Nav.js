@@ -81,7 +81,7 @@ export const Nav = ({ darkMode, setDarkMode }) => {
               </span>
               <span>Dark</span>
             </label>
-            {user?.email ? (
+            {user?.uid ? (
               <>
                 <li className="font-semibold">
                   <Link to="/profile">

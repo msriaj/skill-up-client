@@ -7,7 +7,7 @@ import { Nav } from "../Components/Nav/Nav";
 const Main = () => {
   const [darkMode, setDarkMode] = useState(false);
   return (
-    <div className={darkMode ? "dark" : " "}>
+    <div className={`${darkMode && "dark"} dark:bg-[#0F172A]`}>
       <Nav darkMode={darkMode} setDarkMode={setDarkMode} />
       <Outlet />
       <Footer />

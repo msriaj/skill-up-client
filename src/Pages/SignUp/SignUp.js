@@ -23,7 +23,7 @@ const SignUp = () => {
             <img src={img} alt="" />
           </div>
           <div className="w-full lg:w-1/2 max-w-md p-8 space-y-3 bg-white rounded-xl shadow-xl dark:bg-gray-900 dark:text-gray-100">
-            <h1 className="text-2xl font-bold text-center">Login</h1>
+            <h1 className="text-2xl font-bold text-center">Sign Up </h1>
             <form
               onSubmit={submitHandler}
               className="space-y-6 ng-untouched ng-pristine ng-valid"
@@ -80,7 +80,7 @@ const SignUp = () => {
                 />
               </div>
               <button className="block w-full p-3 text-center   bg-blue-500 rounded-md text-white dark:text-gray-900 dark:bg-violet-400">
-                Sign in
+                Sign Up
               </button>
             </form>
 

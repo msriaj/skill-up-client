@@ -1,4 +1,5 @@
 import React from "react";
+import { FaStar, FaStarHalfAlt, FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const Course = ({ course }) => {
   console.log(course);
@@ -13,7 +14,7 @@ const Course = ({ course }) => {
     catID,
   } = course;
   return (
-    <article className="flex flex-col bg-white shadow-lg rounded-lg overflow-hidden dark:bg-gray-900">
+    <article className="flex flex-col bg-white shadow-lg rounded-lg overflow-hidden dark:bg-[#182233]">
       <Link>
         <img
           alt="thumb"
@@ -32,7 +33,7 @@ const Course = ({ course }) => {
           </Link>
         </div>
         <Link className=" tracking-wider uppercase   dark:text-violet-400">
-          <h3 className=" py-2 text-sm font-bold text-gray-600 hover:text-gray-900   ">
+          <h3 className=" py-2 text-sm font-bold text-[#E2E8F0] hover:text-[#e2e8f08a]   ">
             {CourseName}
           </h3>
         </Link>
@@ -41,9 +42,18 @@ const Course = ({ course }) => {
             Instructor: <b>{Author}</b>{" "}
           </span>
         </div>
-        <div className="flex font-bold my-4 flex-wrap justify-between  space-x-2 text-xs dark:text-gray-400">
-          <span>{studentEnrolled} Enrolled</span>
-          <span>Review: {Review}</span>
+        <div className="flex items-center text-gray-400 font-bold my-2 flex-wrap justify-between  space-x-2 text-xs dark:text-gray-400">
+          <span className="flex items-center">
+            <FaUserCircle className="mr-1" /> {studentEnrolled} Student
+          </span>
+          <span className="flex items-center">
+            <FaStar className="inline-block text-yellow-600" />
+            <FaStar className="inline-block text-yellow-600" />
+            <FaStar className="inline-block text-yellow-600" />
+            <FaStar className="inline-block text-yellow-600" />
+            <FaStarHalfAlt className="inline-block text-yellow-600 mr-1" />
+            {Review}
+          </span>
         </div>
         <div>
           <Link
