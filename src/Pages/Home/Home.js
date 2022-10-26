@@ -10,7 +10,7 @@ const Home = () => {
       <Header />
       <Feature />
       <HomeCat />
-      <Courses />
+      {/* <Courses /> */}
     </>
   );
 };
