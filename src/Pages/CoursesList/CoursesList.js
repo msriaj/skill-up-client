@@ -1,16 +1,14 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-
 import Course from "../../Components/Course/Course";
+
 import { serverUrl } from "../../Components/Utilitis/ApiConfig";
 
 const CoursesList = () => {
   const [courses, setCourses] = useState([]);
   const [courseCatList, setCourseCatList] = useState([]);
   const [courseCat, setCourseCat] = useState(7);
-
-  console.log(`${serverUrl}/category/${courseCat}`);
 
   useEffect(() => {
     fetch(`${serverUrl}/category/${courseCat}`)
@@ -26,8 +24,6 @@ const CoursesList = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  console.log(courses);
-  console.log(courseCatList);
   return (
     <div className="bg-blue-50 dark:bg-[#0F172A]">
       <div className="flex flex-col-reverse md:flex-row mx-auto lg:w-10/12 ">
