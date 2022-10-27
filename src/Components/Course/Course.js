@@ -10,26 +10,20 @@ const Course = ({ course }) => {
     Review,
     Author,
     studentEnrolled,
-    catID,
   } = course;
   return (
     <article className="flex flex-col  bg-white shadow-lg rounded-lg overflow-hidden dark:bg-[#182233]">
-      <Link>
-        <img
-          alt="thumb"
-          className="object-cover w-full h-52 dark:bg-gray-500"
-          src={CourseThumb}
-        />
-      </Link>
+      <img
+        alt="thumb"
+        className="object-cover w-full h-52 dark:bg-gray-500"
+        src={CourseThumb}
+      />
 
       <div className="flex flex-col flex-1 px-3 py-3">
         <div>
-          <Link
-            to={`/category/${catID}`}
-            className="bg-blue-600 text-xs  p-1 rounded text-white hover:bg-white hover:text-blue-600 border border-blue-600 transition-all duration-300 inline-block"
-          >
+          <span className="bg-blue-600 text-xs  p-1 rounded text-white hover:bg-white hover:text-blue-600 border border-blue-600 transition-all duration-300 inline-block">
             {CategoryName}
-          </Link>
+          </span>
         </div>
         <Link
           to={`/course-preview/${courseID}`}

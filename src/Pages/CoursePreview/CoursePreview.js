@@ -58,7 +58,7 @@ const CoursePreview = () => {
     <div className="bg-blue-50 dark:bg-[#0F172A] py-5">
       <div className="lg:w-10/12 mx-auto " id="courseContent">
         <div className="bg-blue-600 mx-5 md:mx-0 text-white rounded-md flex items-center">
-          <div className="w-full md:w-8/12 p-12">
+          <div className="w-full md:w-8/12 p-5 md:p-12">
             <div>
               <span
                 onClick={pdfDownload}
@@ -106,7 +106,7 @@ const CoursePreview = () => {
               {whatWillLearn.map((wwil, idx) => (
                 <li
                   key={idx}
-                  className="w-1/2 list-none flex items-center my-1 text-green-600  dark:text-[#36B4EC]"
+                  className=" w-full md:w-1/2 list-none flex items-center my-1 text-green-600  dark:text-[#36B4EC]"
                 >
                   <FaCheckCircle />
                   <span className="ml-2 font-semibold"> {wwil}</span>

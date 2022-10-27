@@ -205,18 +205,48 @@ export const Nav = ({ darkMode, setDarkMode }) => {
                           FAQ
                         </Link>
                       </li>
-                      <li className="font-semibold">
-                        <Link to="/login">
-                          <button className="bg-white hover:bg-[#21225f] hover:text-white rounded text-sm px-5 py-2 mr-2">
-                            Sign In
-                          </button>
-                        </Link>
-                        <Link to="/signup">
-                          <button className="bg-blue-600  hover:bg-[#21225f] text-white rounded text-sm px-5 py-2">
-                            Sign Up
-                          </button>
-                        </Link>
-                      </li>
+
+                      {user?.uid ? (
+                        <>
+                          <li className="font-semibold">
+                            <Link to="/profile">
+                              <img
+                                className="rounded-full w-12"
+                                src={user?.photoURL ? user?.photoURL : avatar}
+                                alt="user"
+                                title={
+                                  user?.displayName
+                                    ? user?.displayName
+                                    : "No displayName Found please login again"
+                                }
+                              />
+                            </Link>
+                          </li>
+                          <li>
+                            <div
+                              title="Log Out"
+                              onClick={logOut}
+                              className="bg-white flex items-center cursor-pointer w-full hover:bg-[#21225f] hover:text-white rounded text-sm px-5 py-2 mr-2"
+                            >
+                              <FaSignOutAlt />{" "}
+                              <span className="ml-2">log out</span>
+                            </div>
+                          </li>
+                        </>
+                      ) : (
+                        <li className="font-semibold">
+                          <Link to="/login">
+                            <button className="bg-white hover:bg-[#21225f] hover:text-white rounded text-sm px-5 py-2 mr-2">
+                              Sign In
+                            </button>
+                          </Link>
+                          <Link to="/signup">
+                            <button className="bg-blue-600  hover:bg-[#21225f] text-white rounded text-sm px-5 py-2">
+                              Sign Up
+                            </button>
+                          </Link>
+                        </li>
+                      )}
                     </ul>
                   </nav>
                 </div>
