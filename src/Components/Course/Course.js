@@ -2,7 +2,6 @@ import React from "react";
 import { FaStar, FaStarHalfAlt, FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const Course = ({ course }) => {
-  console.log(course);
   const {
     courseID,
     CategoryName,
@@ -14,7 +13,7 @@ const Course = ({ course }) => {
     catID,
   } = course;
   return (
-    <article className="flex flex-col bg-white shadow-lg rounded-lg overflow-hidden dark:bg-[#182233]">
+    <article className="flex flex-col  bg-white shadow-lg rounded-lg overflow-hidden dark:bg-[#182233]">
       <Link>
         <img
           alt="thumb"

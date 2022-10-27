@@ -6,6 +6,7 @@ import { AuthContext } from "../../Context/UserContext/UserContext";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaGithub, FaGoogle } from "react-icons/fa";
+import { useEffect } from "react";
 
 const Login = () => {
   const resetNotify = () =>
@@ -20,10 +21,11 @@ const Login = () => {
       theme: "light",
     });
 
-  const { signInEmail, googleSignIn, resetPass, signInGithub } =
+  const { user, signInEmail, googleSignIn, resetPass, signInGithub } =
     useContext(AuthContext);
   const [typedEmail, setTypedEmail] = useState("");
-
+  const [logError, setLogError] = useState(null);
+  console.log(typeof logError);
   const location = useLocation();
   const nextUrl = location?.state?.from.pathname || "/";
 
@@ -36,28 +38,36 @@ const Login = () => {
     const password = form.password.value;
 
     signInEmail(email, password)
-      .then((user) => navigate(nextUrl))
-      .catch((err) => console.log(err));
+      .then((user) => {
+        navigate(nextUrl);
+        setLogError("");
+      })
+      .catch((err) => setLogError(err.code));
   };
 
   const googleSignInBtn = () => {
     googleSignIn()
       .then((user) => navigate(nextUrl))
-      .catch((err) => console.log(err));
+      .catch((err) => setLogError(err));
   };
 
   const signInGithubHandler = () => {
     signInGithub()
       .then((user) => navigate(nextUrl))
-      .catch((err) => console.log(err));
+      .catch((err) => setLogError(err));
   };
 
   const resetHandler = () => {
     typedEmail !== "" &&
       resetPass(typedEmail)
         .then((result) => resetNotify())
-        .catch((err) => console.log(err));
+        .catch((err) => setLogError(err));
   };
+  useEffect(() => {
+    if (user?.uid) {
+      navigate("/");
+    }
+  }, [navigate, user?.uid]);
 
   return (
     <div className="bg-blue-50">
@@ -110,6 +120,11 @@ const Login = () => {
               Sign in
             </button>
           </form>
+          {logError && (
+            <p className="text-red-600 font-bold text-center text-xl">
+              {logError}{" "}
+            </p>
+          )}
           <div className="flex items-center pt-4 space-x-1">
             <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
             <p className="px-3 text-sm dark:text-gray-400">

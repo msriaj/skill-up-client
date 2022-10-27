@@ -37,7 +37,7 @@ const SignUp = () => {
             >
               <div className="space-y-1 text-sm">
                 <label htmlFor="Name" className="block dark:text-gray-400">
-                  Name
+                  Full name
                 </label>
                 <input
                   type="text"
