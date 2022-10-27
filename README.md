@@ -29,3 +29,4 @@ SkillUP Server Link [Server Link ](https://skillup-server-msriaj.vercel.app).
 - full responsive website
 - dark mode toggle and theme worked
 - navbar and course page sidebar can track current page
+- user can buy only one course it will save on local storage if user visit owned course purchase button will be disabled

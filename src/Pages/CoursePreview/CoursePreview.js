@@ -16,13 +16,13 @@ import courseIntro from "./course-intro.png";
 
 const CoursePreview = () => {
   const { addtocart, purchasedCourse } = useContext(CartInfo);
-  console.log(purchasedCourse);
+
   const courseDetails = useLoaderData();
   const navigate = useNavigate();
 
   const {
     CategoryName,
-
+    courseID,
     CourseThumb,
     CourseName,
     Author,
@@ -162,11 +162,19 @@ const CoursePreview = () => {
                 ))}
               </div>
               <div className="pb-4 px-5">
+                {}
                 <button
                   onClick={purchasedHandler}
-                  className="bg-blue-600  rounded-md text-white font-bold py-2 w-full"
+                  className={` rounded-md text-white font-bold py-2 w-full ${
+                    purchasedCourse?.courseID === courseID
+                      ? "bg-gray-400"
+                      : "bg-blue-600"
+                  }`}
+                  disabled={purchasedCourse?.courseID === courseID}
                 >
-                  Get premium access
+                  {purchasedCourse?.courseID === courseID
+                    ? "Already Owned"
+                    : "Get premium access"}
                 </button>
               </div>
             </div>

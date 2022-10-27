@@ -9,17 +9,23 @@ const CartContext = ({ children }) => {
   const [purchasedCourse, setPurchasedCourse] = useState(null);
 
   useEffect(() => {
-    localStorage.setItem("purchased", JSON.stringify(cart));
-  }, [cart, purchasedCourse]);
-
-  useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
+    if (Object.keys(cart).length) {
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
   }, [cart]);
 
+  const purchasedHandler = () => {
+    localStorage.setItem("purchased", JSON.stringify(cart));
+  };
   useEffect(() => {
-    const items = JSON.parse(localStorage.getItem("purchased"));
+    const items = JSON.parse(localStorage.getItem("cart"));
     if (items) {
-      setPurchasedCourse(items);
+      setCart(items);
+    }
+
+    const courseOwned = JSON.parse(localStorage.getItem("purchased"));
+    if (courseOwned) {
+      setPurchasedCourse(courseOwned);
     }
   }, []);
 
@@ -28,6 +34,7 @@ const CartContext = ({ children }) => {
     purchasedCourse,
     addtocart: setCart,
     setPurchasedCourse,
+    purchasedHandler,
   };
   return <CartInfo.Provider value={allCartInfo}> {children}</CartInfo.Provider>;
 };

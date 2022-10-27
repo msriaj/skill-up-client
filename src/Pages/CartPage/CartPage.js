@@ -1,18 +1,15 @@
 import React from "react";
-
 import { useContext } from "react";
-
 import { Link, useNavigate } from "react-router-dom";
-
 import { CartInfo } from "../../Context/CartContext/CartContext";
 
 const CartPage = () => {
   const navigate = useNavigate();
-  const { cart, setPurchasedCourse } = useContext(CartInfo);
+  const { cart, purchasedHandler } = useContext(CartInfo);
 
   const submitHandler = (e) => {
     e.preventDefault();
-    setPurchasedCourse(cart.courseID);
+    purchasedHandler(cart);
     navigate("/purchased");
   };
   return (
@@ -56,22 +53,22 @@ const CartPage = () => {
         <div className="w-full  md:w-6/12  px-5">
           <form onSubmit={submitHandler}>
             <div className="bg-white  dark:bg-[#182233] border border-gray-200 rounded-md shadow-lg p-8">
-              <h1 class="font-semibold text-2xl border-b pb-8">
+              <h1 className="font-semibold text-2xl border-b pb-8">
                 Order Summary
               </h1>
 
               <div>
-                <label class="font-medium inline-block mb-3 text-sm uppercase">
+                <label className="font-medium inline-block mb-3 text-sm uppercase">
                   Shipping
                 </label>
-                <select class="block p-2 text-gray-600 w-full text-sm border border-gray-200">
+                <select className="block p-2 text-gray-600 w-full text-sm border border-gray-200">
                   <option>Free Standard shipping - Online Downloadable </option>
                 </select>
               </div>
-              <div class="py-10">
+              <div className="py-10">
                 <label
-                  for="promo"
-                  class="font-semibold inline-block mb-3 text-sm uppercase"
+                  htmlFor="promo"
+                  className="font-semibold inline-block mb-3 text-sm uppercase"
                 >
                   Transactions ID
                 </label>
@@ -79,15 +76,15 @@ const CartPage = () => {
                   type="text"
                   id="promo"
                   placeholder="Enter your code"
-                  class="p-2 text-sm w-full border border-gray-200"
+                  className="p-2 text-sm w-full border border-gray-200"
                   required
                 />
               </div>
 
-              <div class="py-2">
+              <div className="py-2">
                 <label
-                  for="promo"
-                  class="font-semibold inline-block mb-3 text-sm uppercase"
+                  htmlFor="promo"
+                  className="font-semibold inline-block mb-3 text-sm uppercase"
                 >
                   Promo Code
                 </label>
@@ -95,19 +92,19 @@ const CartPage = () => {
                   type="text"
                   id="promo"
                   placeholder="Enter your code"
-                  class="p-2 text-sm w-full border border-gray-200"
+                  className="p-2 text-sm w-full border border-gray-200"
                   required
                 />
               </div>
 
-              <div class="border-t mt-8">
-                <div class="flex font-semibold justify-between py-6 text-sm uppercase">
+              <div className="border-t mt-8">
+                <div className="flex font-semibold justify-between py-6 text-sm uppercase">
                   <span>Total cost</span>
                   <span>5500Taka</span>
                 </div>
                 <button
                   type="submit"
-                  class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full"
+                  className="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full"
                 >
                   Pay Now
                 </button>
