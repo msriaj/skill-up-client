@@ -48,15 +48,15 @@ Api Server Link [Server Link ](https://skillup-server-msriaj.vercel.app).
 
 ## Screenshots
 
-`![Writing]https://i.ibb.co/PQspR6x/screencapture-localhost-3000-signup-2022-10-27-21-38-34.jpg)`
-`![Writing]https://i.ibb.co/m01cWzV/screencapture-localhost-3000-login-2022-10-27-21-38-23.jpg)`
-`![Writing]https://i.ibb.co/LzpCky9/screencapture-localhost-3000-purchased-2022-10-27-21-38-11.jpg)`
-`![Writing]https://i.ibb.co/kSwgQmZ/screencapture-localhost-3000-cart-2022-10-27-21-37-59.jpg)`
-`![Writing]https://i.ibb.co/j8VqD8X/screencapture-localhost-3000-course-preview-1-2022-10-27-21-37-48.jpg)`
-`![Writing]https://i.ibb.co/jZ8xSkS/screencapture-localhost-3000-profile-2022-10-27-21-37-33.jpg)`
-`![Writing]https://i.ibb.co/m6dfXHS/screencapture-localhost-3000-courses-2022-10-27-21-37-09.jpg)`
-`![Writing]https://i.ibb.co/VLXbwfK/screencapture-localhost-3000-2022-10-27-21-36-54.jpg)`
-`![Writing]https://i.ibb.co/Y0JBp9q/screencapture-localhost-3000-2022-10-27-21-36-43.jpg)`
+`![Writing](https://i.ibb.co/PQspR6x/screencapture-localhost-3000-signup-2022-10-27-21-38-34.jpg)`
+`![Writing](https://i.ibb.co/m01cWzV/screencapture-localhost-3000-login-2022-10-27-21-38-23.jpg)`
+`![Writing](https://i.ibb.co/LzpCky9/screencapture-localhost-3000-purchased-2022-10-27-21-38-11.jpg)`
+`![Writing](https://i.ibb.co/kSwgQmZ/screencapture-localhost-3000-cart-2022-10-27-21-37-59.jpg)`
+`![Writing](https://i.ibb.co/j8VqD8X/screencapture-localhost-3000-course-preview-1-2022-10-27-21-37-48.jpg)`
+`![Writing](https://i.ibb.co/jZ8xSkS/screencapture-localhost-3000-profile-2022-10-27-21-37-33.jpg)`
+`![Writing](https://i.ibb.co/m6dfXHS/screencapture-localhost-3000-courses-2022-10-27-21-37-09.jpg)`
+`![Writing](https://i.ibb.co/VLXbwfK/screencapture-localhost-3000-2022-10-27-21-36-54.jpg)`
+`![Writing](https://i.ibb.co/Y0JBp9q/screencapture-localhost-3000-2022-10-27-21-36-43.jpg)`
 
 ## Technologies
 
