@@ -131,7 +131,7 @@ const CoursePreview = () => {
           </div>
           <div className="lg:w-4/12 md:ml-3 mt-8 md:mt-0">
             <div className="rounded-xl shadow-md overflow-hidden bg-white dark:bg-[#182133]">
-              <img src={CourseThumb} alt="" crossOrigin="anonymous" />
+              <img src={CourseThumb} alt="" />
               <div className="p-4">
                 <div className="flex justify-around border-b border-blue-100 pb-3">
                   <div className="text-center">
